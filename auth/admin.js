@@ -134,7 +134,7 @@ export const addCollection = async (req, res) => {
 
 // Route Handler
 
-import bcrypt from 'bcrypt';  
+import bcrypt from 'bcryptjs';  
 import validator from 'validator'; 
 
 export const addUser = async (req, res) => {
