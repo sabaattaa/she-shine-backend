@@ -207,3 +207,72 @@ export const addUser = async (req, res) => {
     });
   }
 };
+
+
+// Controller: getProductes.js
+export const getProductes = async (req, res) => {
+  try {
+    // Optionally, apply filters (if query params are provided)
+    const filters = {};
+
+    if (req.query.category) {
+      filters.category = req.query.category;
+    }
+
+    if (req.query.isActive) {
+      filters.isActive = req.query.isActive === 'true';
+    }
+
+    // Fetch products from DB with filters
+    const products = await Product.find(filters).sort({ _id: -1 }).lean();
+
+    // Respond with the result
+    return res.status(200).json({
+      status: 200,
+      message: "Products fetched successfully",
+      products: products,
+    });
+
+  } catch (error) {
+    console.error("Error fetching products:", error.message);
+    return res.status(500).json({
+      status: 500,
+      message: "Failed to fetch products",
+      error: error.message,
+    });
+  }
+};
+
+
+export const getCollections = async (req, res) => {
+  try {
+    // Optionally, apply filters (if query params are provided)
+    const filters = {};
+
+    if (req.query.category) {
+      filters.category = req.query.category;
+    }
+
+    if (req.query.isActive) {
+      filters.isActive = req.query.isActive === 'true';
+    }
+
+    // Fetch products from DB with filters
+    const products = await Collection.find(filters).sort({ _id: -1 }).lean();
+
+    // Respond with the result
+    return res.status(200).json({
+      status: 200,
+      message: "Collections fetched successfully",
+      products: products,
+    });
+
+  } catch (error) {
+    console.error("Error fetching products:", error.message);
+    return res.status(500).json({
+      status: 500,
+      message: "Failed to fetch Collections",
+      error: error.message,
+    });
+  }
+};
