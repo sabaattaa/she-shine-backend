@@ -13,8 +13,16 @@ const productSchema = new mongoose.Schema({
   discount: { type: Number, default: 0 },
   start_date: { type: Date },
   end_date: { type: Date },
-  thumbnail: { type: Object },  
-  media: { type: [Object], default: [] },  
+  thumbnail: {
+    filename: { type: String },
+    url: { type: String },
+  },
+  media: [
+    {
+      filename: { type: String },
+      url: { type: String },
+    }
+  ],
 }, {
   timestamps: true
 });
