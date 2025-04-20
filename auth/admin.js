@@ -55,12 +55,7 @@ export const addProduct = async (req, res) => {
       discount,
       start_date,
       end_date,
-      thumbnail: thumbnail
-        ? {
-            filename: thumbnail.filename,
-            url: `${process.env.PRODUCT_IMAGE_URL}${thumbnail.filename}`,
-          }
-        : null,
+      thumbnail: thumbnail&&`${process.env.PRODUCT_IMAGE_URL}${thumbnail.filename}`,
       media: media.map((file) => ({
         filename: file.filename,
         url: `${process.env.PRODUCT_IMAGE_URL}${file.filename}`,
