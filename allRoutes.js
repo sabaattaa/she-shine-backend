@@ -17,12 +17,7 @@ router.post(
     ]),
     addProduct
   );
-  
-
-
   router.post("/add-collection", verifyToken,uploadCollection.single("thumbnail"), addCollection);
-
-
   router.post("/add-user", verifyToken, uploadProfile.single('thumbnail'),addUser);
   router.get("/get-products",getProductes)
   router.get("/get-collections",getCollections)
