@@ -29,7 +29,7 @@ export const addProduct = async (req, res) => {
       });
     }
 
-    // ✅ File validations
+     console.log("ddddddddddddd", req.file,req.files,)
     const thumbnail = req?.files?.["thumbnail"]?.[0];
     const media = req?.files?.["media"] || [];
 
