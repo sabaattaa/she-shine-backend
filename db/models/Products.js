@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
+  discountAmount: { type: Number, required: false },
   quantity: { type: Number, required: true },
   collection_id: {
     type: mongoose.Schema.Types.ObjectId,
