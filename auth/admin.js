@@ -19,7 +19,7 @@ export const addProduct = async (req, res) => {
       isReturn,
       discount,
       start_date,
-      end_date,
+      end_date,  discountAmount,
     } = req.body;
 
     // ✅ Check mandatory fields (basic extra protection)
@@ -54,7 +54,7 @@ export const addProduct = async (req, res) => {
       isReturn,
       discount,
       start_date,
-      end_date,
+      end_date,  discountAmount,
       thumbnail: thumbnail
         ? {
             filename: thumbnail.filename,
