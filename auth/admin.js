@@ -19,7 +19,7 @@ export const addProduct = async (req, res) => {
       isReturn,
       discount,
       start_date,
-      end_date,  discountAmount,
+      end_date,  discountAmount,descriptedname ,description
     } = req.body;
 
     // ✅ Check mandatory fields (basic extra protection)
@@ -54,7 +54,10 @@ export const addProduct = async (req, res) => {
       isReturn,
       discount,
       start_date,
-      end_date,  discountAmount,
+      end_date,  
+      discountAmount,
+      descriptedname ,    
+      description,   
       thumbnail: thumbnail
         ? {
             filename: thumbnail.filename,
@@ -65,6 +68,20 @@ export const addProduct = async (req, res) => {
         filename: file.filename,
         url: `${process.env.PRODUCT_IMAGE_URL}${file.filename}`,
       })),
+
+
+
+
+
+ 
+  
+
+
+
+
+
+
+
     });
 
     // ✅ Return clean response
